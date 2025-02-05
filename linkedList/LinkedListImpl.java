@@ -1,6 +1,7 @@
 package linkedList;
 
 public class LinkedListImpl implements LinkedList {
+	ListItem head;
 
 	@Override
 	public Boolean isItemInList(String thisItem) {
@@ -10,7 +11,20 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public Boolean addItem(String thisItem) {
-		
+				
+				
+				if(head == null) {
+					head = new ListItem(thisItem);
+					return true;
+				}
+				
+				ListItem current = head;
+				while(current.next != null) {
+					current = current.next;
+				}
+				current.next = new ListItem(thisItem);
+				
+				
 		
 		System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
 	
