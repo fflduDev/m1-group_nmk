@@ -24,6 +24,7 @@ public class LinkedListImpl implements LinkedList {
 				}
 				current.next = new ListItem(thisItem);
 				
+				System.out.println("Hello World");				
 				
 		
 		System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
