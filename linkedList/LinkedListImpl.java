@@ -99,7 +99,24 @@ public class LinkedListImpl implements LinkedList {
 	@Override
 	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
 		// TODO Auto-generated method stub
-		return null;
+		if (head == null) {
+			return false;
+		}
+
+		ListItem current = head;
+		while (current.next != null) {
+			if (current.next.data.equals(itemToInsertBefore)) {
+				ListItem prevNode = current;
+				ListItem newNode = new ListItem(newItem);
+				newNode.next = prevNode.next;
+				prevNode.next = newNode;
+				return true;
+			}
+
+			current = current.next;
+		}
+
+		return false;
 	}
 
 	@Override
