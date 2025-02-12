@@ -25,11 +25,9 @@ public class LinkedListTester {
 
 		boolean deleted = tester.deleteItem("First");
 
-		if (deleted) {
-			System.out.println("Success");
-		} else {
-			System.out.println("Fail");
-		}
+		tester.listItems();
+
+		boolean added = tester.insertBefore("TEST", "Third");
 
 		tester.listItems();
 	}
