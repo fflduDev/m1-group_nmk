@@ -6,26 +6,27 @@ public class LinkedListImpl implements LinkedList {
 	@Override
 	public Boolean isItemInList(String thisItem) {
 		if (head == null) {
-			System.out.printf("Item '%s' does not exist in the LinkedList.\n", thisItem);
+			System.out.printf("Item '%s' does not exist in the List\n", thisItem);
 			return false;
 		}
 
 		ListItem current = head;
 		while (current != null) {
 			if (current.data.equals(thisItem)) {
-				System.out.printf("Item '%s' exists in the LinkedList.\n", thisItem);
+				System.out.printf("Item '%s' exists in the List\n", thisItem);
 				return true;
 			}
 			current = current.next;
 		}
 
-		System.out.printf("Item '%s' does not exist in the LinkedList.\n", thisItem);
+		System.out.printf("Item '%s' does not exist in the List\n", thisItem);
 		return false;
 	}
 
 	@Override
 	public Boolean addItem(String thisItem) {
 		if (thisItem == null) {
+			System.err.println("Error adding item");
 			return false;
 		}
 
@@ -62,14 +63,17 @@ public class LinkedListImpl implements LinkedList {
 			count++;
 			temp = temp.next;
 		}
+
+		System.out.printf("%d item(s) in the List\n", count);
 		return count;
 	}
 
 	@Override
 	public void listItems() {
+		System.out.println("Items in List:");
 		ListItem current = head;
 		while (current != null) {
-			System.out.println(current.data);
+			System.out.printf("- %s\n", current.data);
 			current = current.next;
 		}
 	}
@@ -78,11 +82,13 @@ public class LinkedListImpl implements LinkedList {
 	public Boolean deleteItem(String thisItem) {
 
 		if (head == null) {
+			System.out.println("Error deleting item");
 			return false;
 		}
 
 		if (head.data.equals(thisItem)) {
 			head = head.next;
+			System.out.println("Item deleted: " + thisItem);
 			return true;
 		}
 
@@ -90,12 +96,14 @@ public class LinkedListImpl implements LinkedList {
 		while (current.next != null) {
 			if (current.next.data.equals(thisItem)) {
 				current.next = current.next.next;
+				System.out.println("Item deleted: " + thisItem);
 				return true;
 			}
 			current = current.next;
 
 		}
 
+		System.out.printf("Item '%s' could not be deleted\n", thisItem);
 		return false;
 	}
 
@@ -103,6 +111,7 @@ public class LinkedListImpl implements LinkedList {
 	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
 
 		if (head == null) {
+			System.out.println("Item not inserted, List is empty");
 			return false;
 		}
 
@@ -113,12 +122,14 @@ public class LinkedListImpl implements LinkedList {
 				ListItem newNode = new ListItem(newItem);
 				newNode.next = prevNode.next;
 				prevNode.next = newNode;
+				System.out.println(String.format("Item '%s' inserted before '%s'", newItem, itemToInsertBefore));
 				return true;
 			}
 
 			current = current.next;
 		}
 
+		System.out.printf("Item '%s' could not be inserted\n", newItem);
 		return false;
 	}
 
@@ -126,6 +137,7 @@ public class LinkedListImpl implements LinkedList {
 	public Boolean insertAfter(String newItem, String itemToInsertAfter) {
 
 		if (head == null) {
+			System.out.println("Item not inserted, List is empty");
 			return false;
 		}
 
@@ -135,12 +147,14 @@ public class LinkedListImpl implements LinkedList {
 				ListItem newNode = new ListItem(newItem);
 				newNode.next = current.next;
 				current.next = newNode;
+				System.out.println(String.format("Item '%s' inserted after '%s'", newItem, itemToInsertAfter));
 				return true;
 			}
 
 			current = current.next;
 		}
 
+		System.out.printf("Item '%s' could not be inserted\n", newItem);
 		return false;
 	}
 
