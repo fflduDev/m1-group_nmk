@@ -6,17 +6,20 @@ public class LinkedListImpl implements LinkedList {
 	@Override
 	public Boolean isItemInList(String thisItem) {
 		if (head == null) {
+			System.out.printf("Item '%s' does not exist in the LinkedList.\n", thisItem);
 			return false;
 		}
 
 		ListItem current = head;
 		while (current != null) {
 			if (current.data.equals(thisItem)) {
+				System.out.printf("Item '%s' exists in the LinkedList.\n", thisItem);
 				return true;
 			}
 			current = current.next;
 		}
 
+		System.out.printf("Item '%s' does not exist in the LinkedList.\n", thisItem);
 		return false;
 	}
 
@@ -28,7 +31,7 @@ public class LinkedListImpl implements LinkedList {
 
 		if (head == null) {
 			head = new ListItem(thisItem);
-			System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
+			System.out.println("Item added: " + thisItem);
 			return true;
 		}
 
@@ -45,7 +48,7 @@ public class LinkedListImpl implements LinkedList {
 
 		current.next = new ListItem(thisItem);
 
-		System.out.println("hello from addItem in LinkedListImpl - the item passed in: " + thisItem);
+		System.out.println("Item added: " + thisItem);
 
 		return true;
 
@@ -98,7 +101,7 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public Boolean insertBefore(String newItem, String itemToInsertBefore) {
-		// TODO Auto-generated method stub
+
 		if (head == null) {
 			return false;
 		}
@@ -121,14 +124,14 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public Boolean insertAfter(String newItem, String itemToInsertAfter) {
-		// TODO Auto-generated method stub
+
 		if (head == null) {
 			return false;
 		}
 
 		ListItem current = head;
 		while (current != null) {
-			if (current.data.equals(itemToInsertAfter)) {	
+			if (current.data.equals(itemToInsertAfter)) {
 				ListItem newNode = new ListItem(newItem);
 				newNode.next = current.next;
 				current.next = newNode;
