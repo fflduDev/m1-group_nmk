@@ -11,9 +11,10 @@ public class StackImpl implements Stack {
 	@Override
 	public void push(String s) {
 		if(isFull()) {
-			System.out.println(s+ "cannot be added to the stack");
-		}else {
-			ridersStackArray[top++] = s;
+			System.out.println(s+ " cannot be added to the stack");
+			return;
+		} else {
+			ridersStackArray[++top] = s;
 			System.out.println("rider added to stack: " + s);
 		}
 	}
@@ -34,7 +35,7 @@ public class StackImpl implements Stack {
 	
 	@Override
 	public Boolean isEmpty() {
-		return top == -1;
+		return top == -1; 
 	}
 
 	
@@ -73,9 +74,14 @@ public class StackImpl implements Stack {
 	
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
-		
-	}
- 
+		if(isEmpty()) {
+			System.out.println("The stack is empty.");
+		} else {
+			for(int i = 0; i <= top; i++) {
+				System.out.println(ridersStackArray[i]);
+	        }
+	        System.out.println();
+			}
+		}			
 
 }

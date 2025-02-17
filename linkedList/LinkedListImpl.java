@@ -159,7 +159,7 @@ public class LinkedListImpl implements LinkedList {
 	}
 
 	@Override
-	public void sort() {
+	public void sort() { // extra credit
 		// TODO Auto-generated method stub
 
 	}
