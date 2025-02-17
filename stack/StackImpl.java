@@ -2,49 +2,72 @@ package stack;
 
 public class StackImpl implements Stack {
 
+	private String[] ridersArray;
+	private int top;
+	private int capacity;
+	
+	
+	
 	@Override
 	public void push(String s) {
-	
-		System.out.println("thing i added to stack: " + s);
-	
+		if(isFull()) {
+			System.out.println(s+ "cannot be added to the stack");
+		}else {
+			ridersArray[top++] = s;
+			System.out.println("rider added to stack: " + s);
+		}
 	}
 
+	
 	@Override
 	public String pop() {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) {
+			return null;
+		}else {
+			String popRider = ridersArray[top--];
+			System.out.println("Rider removed: "+popRider);
+			return popRider;
+		}
 	}
 
+	
 	@Override
 	public Boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return null;
+		return top == -1;
 	}
 
+	
 	@Override
 	public Boolean isFull() {
-		// TODO Auto-generated method stub
-		return null;
+		return top == capacity - 1;
 	}
 
+	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		return top + 1;
 	}
 
+	
 	@Override
 	public String peek() {
-		// TODO Auto-generated method stub
-		return null;
+		if (isEmpty()) {
+			return null;
+		}else {
+			System.out.println("Peek Result: " + ridersArray[top]);
+			return ridersArray[top];
+		}
 	}
 
+	
 	@Override
 	public void setCapacity(int size) {
-		// TODO Auto-generated method stub
-		
+		this.capacity = size;
+		this.ridersArray = new String[size];
+		this.top = -1;
 	}
 
+	
 	@Override
 	public void display() {
 		// TODO Auto-generated method stub
