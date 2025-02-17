@@ -2,7 +2,7 @@ package stack;
 
 public class StackImpl implements Stack {
 
-	private String[] ridersArray;
+	private String[] ridersStackArray;
 	private int top;
 	private int capacity;
 	
@@ -13,7 +13,7 @@ public class StackImpl implements Stack {
 		if(isFull()) {
 			System.out.println(s+ "cannot be added to the stack");
 		}else {
-			ridersArray[top++] = s;
+			ridersStackArray[top++] = s;
 			System.out.println("rider added to stack: " + s);
 		}
 	}
@@ -22,10 +22,11 @@ public class StackImpl implements Stack {
 	@Override
 	public String pop() {
 		if (isEmpty()) {
+			System.out.println("This stack is empty and nothing can be popped");
 			return null;
 		}else {
-			String popRider = ridersArray[top--];
-			System.out.println("Rider removed: "+popRider);
+			String popRider = ridersStackArray[top--];
+			System.out.println("Rider removed: " + popRider);
 			return popRider;
 		}
 	}
@@ -52,10 +53,12 @@ public class StackImpl implements Stack {
 	@Override
 	public String peek() {
 		if (isEmpty()) {
+			System.out.println("This stack is empty and nothing can be peeked");
 			return null;
 		}else {
-			System.out.println("Peek Result: " + ridersArray[top]);
-			return ridersArray[top];
+			String peekRider = ridersStackArray[top];
+			System.out.println("Peek Result: " + peekRider);
+			return peekRider;
 		}
 	}
 
@@ -63,7 +66,7 @@ public class StackImpl implements Stack {
 	@Override
 	public void setCapacity(int size) {
 		this.capacity = size;
-		this.ridersArray = new String[size];
+		this.ridersStackArray = new String[size];
 		this.top = -1;
 	}
 
