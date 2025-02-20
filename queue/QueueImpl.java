@@ -11,7 +11,7 @@ public class QueueImpl implements Queue {
 	
 	@Override
 	public boolean isFull() {
-		return size == capacity;
+		return size == capacity; // size will always == capacity --> always full
 	}
 
 	@Override
@@ -38,7 +38,7 @@ public class QueueImpl implements Queue {
 			return null;
 		}else {
 			String deQueuedRider = ridersQueueArray[front];
-			front = (front+1) % capacity;
+			front = (front +1 ) % capacity;
 			size--;
 			return deQueuedRider;
 		}
