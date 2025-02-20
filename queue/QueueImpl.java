@@ -25,9 +25,9 @@ public class QueueImpl implements Queue {
 			System.out.println("Queue is full and nothing can be added");
 			return;
 		}else{
-			front++;
 			rear = (rear + 1) % capacity;
 			ridersQueueArray[rear] = element;
+			size++;
 		}
 	}
 
@@ -37,17 +37,25 @@ public class QueueImpl implements Queue {
 			System.out.println("Queue is empty and nothing can be removed");
 			return null;
 		}else {
-			String deQueueRider = ridersQueueArray[front];
-			front = (front+1)%capacity;
+			String deQueuedRider = ridersQueueArray[front];
+			front = (front+1) % capacity;
+			size--;
+			return deQueuedRider;
 		}
-		return null;
 	}
 
 	@Override
 	public void display() {
-		// TODO Auto-generated method stub
+		if(isEmpty()) {
+			System.out.println("The stack is empty.");
+		} else {
+			for(int i = 0; i <= size; i++) {
+				System.out.println(ridersQueueArray[(front + i) % capacity]);
+	        	}
+	        System.out.println();
+			}
+		}	
 		
-	}
 
 	@Override
 	public String peek(){
