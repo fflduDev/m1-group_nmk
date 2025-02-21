@@ -1,46 +1,45 @@
 package stack;
 
 public class StackTester {
-	
+
+	private static Stack stackTester = new StackImpl();
 
 	public static void main(String[] args) {
-
-		Stack stackTester = new StackImpl();
-		runStackTests(stackTester);
+		runStackTests();
 
 	}
-	
-	public static void runStackTests(Stack stack) {
-		//setting capacity
-		stack.setCapacity(5);
-		
-		//testing isEmpty()
-		stack.pop();
-		
-		//testing push()
+
+	public static void runStackTests() {
+		// setting capacity
+		stackTester.setCapacity(5);
+
+		// testing isEmpty()
+		stackTester.pop();
+
+		// testing push()
 		System.out.println("Pushing elements: ");
-		stack.push("Rider 1");
-		stack.push("Rider 2");
-		stack.push("Rider 3");
-		stack.display();
-		
-		//testing peek()
+		stackTester.push("Rider 1");
+		stackTester.push("Rider 2");
+		stackTester.push("Rider 3");
+		stackTester.display();
+
+		// testing peek()
 		System.out.println("Peeking at top element(Rider 3): ");
-		stack.peek();
-		
-		//testing pop()
-		System.out.println("Poping element(removing Rider 3): ");
-		stack.pop();
-		stack.display();
-		
-		//testing isFull()
-		stack.push("Rider C");
-		stack.push("Rider D");
-		stack.push("Rider E");
-		stack.display();
-		
-		stack.push("Rider F");		
-	 	
+		stackTester.peek();
+
+		// testing pop()
+		System.out.println("Popping element(removing Rider 3): ");
+		stackTester.pop();
+		stackTester.display();
+
+		// testing isFull()
+		stackTester.push("Rider C");
+		stackTester.push("Rider D");
+		stackTester.push("Rider E");
+		stackTester.display();
+
+		stackTester.push("Rider F");
+
 	}
 
 }
