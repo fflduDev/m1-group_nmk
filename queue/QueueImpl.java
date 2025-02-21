@@ -60,6 +60,7 @@ public class QueueImpl implements Queue {
 		if (isEmpty()) {
 			System.out.println("The Queue is empty.");
 		} else {
+			System.out.println("Riders queued:");
 			for (int i = 0; i < size; i++) {
 				System.out.println(ridersQueueArray[(front + i) % capacity]);
 			}

@@ -70,7 +70,7 @@ public class LinkedListImpl implements LinkedList {
 
 	@Override
 	public void listItems() {
-		System.out.println("Items in List:");
+		System.out.println("Stations in List:");
 		ListItem current = head;
 		while (current != null) {
 			System.out.printf("- %s\n", current.data);
