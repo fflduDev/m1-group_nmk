@@ -1,6 +1,8 @@
 package app;
 
 import linkedList.LinkedListTester;
+import queue.QueueTester;
+import stack.StackTester;
 
 public class StagBusClient {
 
@@ -10,16 +12,11 @@ public class StagBusClient {
 		System.out.println("-----L I S T  T E S T------");
 		LinkedListTester.runLinkedListTests();
 
-		// listRunTestMethod...
-
 		System.out.println("-----S T A C K  T E S T------");
-
-		// QRunTestMethod...
+		StackTester.runStackTests();
 
 		System.out.println("----Q U E U E  T E S T-------");
-
-		// StackRunTestMethod...
-
+		QueueTester.runQueueTests();
 	}
 
 }
