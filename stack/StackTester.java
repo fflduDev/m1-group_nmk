@@ -11,51 +11,49 @@ public class StackTester {
 
 	public static void runStackTests() {
 		// setting capacity
-		stackTester.setCapacity(6);
-		
-		
-		//Create (push) 6 riders by name & Iterate over the stack, print all riders
-		stackTester.push("Rider 1");
-		stackTester.push("Rider 2");
-		stackTester.push("Rider 3");
-		stackTester.push("Rider 4");
-		stackTester.push("Rider 5");
-		stackTester.push("Rider 6");
+		stackTester.setCapacity(8);
+
+		// Create (push) 6 riders by name & Iterate over the stack, print all riders
+		stackTester.push("John");
+		stackTester.push("Sarah");
+		stackTester.push("Ana");
+		stackTester.push("Maria");
+		stackTester.push("Richard");
+		stackTester.push("James");
 		stackTester.display();
-		
-		//Peek at the stack / print the result
-		System.out.println("Peeking at top element(Rider 6): ");
+
+		// Peek at the stack / print the result
+		System.out.println("Peeking at the top element: ");
 		stackTester.peek();
-		
-		//Remove (pop) the top of the stack & Iterate over the stack, print all riders
-		System.out.println("Popping element(removing Rider 6): ");
+
+		// Remove (pop) the top of the stack & Iterate over the stack, print all riders
+		System.out.println("Popping the top element: ");
 		stackTester.pop();
 		stackTester.display();
-		
-		//Peek at the stack / print the result
-		System.out.println("Peeking at top element(Rider 5): ");
+
+		// Peek at the stack / print the result
+		System.out.println("Peeking at the top element: ");
 		stackTester.peek();
-		
-		//Add two more riders to the stack
-		stackTester.push("Rider 7");
-		stackTester.push("Rider 8");
-		
-		//Peek at the stack & print the result
-		System.out.println("Peeking at top element(Rider _): ");
+
+		// Add two more riders to the stack
+		stackTester.push("Alex");
+		stackTester.push("Pam");
+
+		// Peek at the stack & print the result
+		System.out.println("Peeking at the top element: ");
 		stackTester.peek();
-		
-		//Remove all riders from the stack
+
+		// Remove all riders from the stack
 		stackTester.pop();
 		stackTester.pop();
 		stackTester.pop();
 		stackTester.pop();
 		stackTester.pop();
-		stackTester.pop();
-		
-		
-		//Verify the stack is now empty (print that result)
 		stackTester.pop();
 
+		// Verify the stack is now empty (print that result)
+		stackTester.pop();
+		stackTester.display();
 
 	}
 
