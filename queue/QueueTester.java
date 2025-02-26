@@ -17,12 +17,12 @@ public class QueueTester {
 
 		// Create (enqueue) 6 riders by name
 		System.out.println("\nAdding elements to the Queue: ");
-		queueTester.enQueue("Rider 1");
-		queueTester.enQueue("Rider 2");
-		queueTester.enQueue("Rider 3");
-		queueTester.enQueue("Rider 4");
-		queueTester.enQueue("Rider 5");
-		queueTester.enQueue("Rider 6");
+		queueTester.enQueue("John");
+		queueTester.enQueue("Sarah");
+		queueTester.enQueue("Ana");
+		queueTester.enQueue("Maria");
+		queueTester.enQueue("Richard");
+		queueTester.enQueue("James");
 
 		// print all riders
 		queueTester.display();
@@ -38,8 +38,8 @@ public class QueueTester {
 
 		// Add two more riders to the queue
 		System.out.println();
-		queueTester.enQueue("Rider 7");
-		queueTester.enQueue("Rider 8");
+		queueTester.enQueue("Alex");
+		queueTester.enQueue("Pam");
 
 		// Peek at the queue & print the result
 		System.out.println("Peeking at first element in Queue:");
